@@ -42,7 +42,6 @@ def checkout(cart, coupons)
   cart = consolidate_cart(cart)
   coupon = apply_coupons(cart,coupons)
   data = apply_clearance(coupon)
-  #data = apply_clearance(apply_coupons(consolidate_cart(cart),coupons))
   grand_total = 0
   data.each do |data_item|
     grand_total = data_item[:price]*data_item[:count]
@@ -50,4 +49,5 @@ def checkout(cart, coupons)
   if grand_total > 100
     grand_total = (grand_total - grand_total*0.1).round(2)
   end
+  p grand_total
 end
