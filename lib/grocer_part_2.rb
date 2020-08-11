@@ -40,7 +40,7 @@ def checkout(cart, coupons)
   # some irritated customers
   
   cart = consolidate_cart(cart)
-  coupon = apply_coupons(cart,coupons)
+  coupon = apply_coupons(cart, coupons)
   data = apply_clearance(coupon)
   grand_total = 0
   data.each do |data_item|
